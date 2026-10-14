@@ -1,0 +1,54 @@
+name: Update experience
+
+on:
+  schedule:
+    - cron: "0 0 1 * *"   # 1st of every month
+  workflow_dispatch:        # allows manual run from the Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Recalculate experience
+        run: |
+          python3 - << 'PY'
+          import re
+          from datetime import date
+
+          START = date(2024, 10, 1)   # <- change this if your start date differs
+          today = date.today()
+
+          years = today.year - START.year - ((today.month, today.day) < (START.month, START.day))
+          if years < 1:
+              text = "less than 1 year"
+          else:
+              text = f"{years}+ years"
+
+          with open("README.md", encoding="utf-8") as f:
+              content = f.read()
+
+          new = re.sub(
+              r"<!--EXP:START-->.*?<!--EXP:END-->",
+              f"<!--EXP:START-->{text}<!--EXP:END-->",
+              content,
+              flags=re.S,
+          )
+
+          with open("README.md", "w", encoding="utf-8") as f:
+              f.write(new)
+          PY
+
+      - name: Commit if changed
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add README.md
+            git commit -m "chore: update years of experience"
+            git push
+          fi
