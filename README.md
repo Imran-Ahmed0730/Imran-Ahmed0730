@@ -43,10 +43,10 @@ I build and ship production web applications: e-commerce platforms, education ma
 
 | Project | What it does | Stack |
 |---|---|---|
-| 🏫 [**BDYouthICT**](https://bdyouthict.com/) | Multi-branch education management: students, courses, enrollment, results, ID cards and certificates, finance, RBAC. Built the central admin panel and branch admin panels | Laravel, jQuery |
-| 🛒 [**Opti Shop**](https://ecom-rjs.optilius.xyz/) | Multi-vendor e-commerce with warehouse and outlet management, SSLCommerz payments, wishlist and product comparison | Laravel |
-| 📚 [**Optilius AMS**](https://ams.optilius.cloud/) | Education management for admins, teachers, students and parents: courses, exams, results, finance, CMS | Laravel, jQuery |
-| 👗 [**Fiona's Style**](https://fionas-style.com) | Solo freelance e-commerce build: admin panel, storefront, customer dashboard, POS and hold orders, coupons, wishlist, comparison, RBAC | Laravel, MySQL, Bootstrap 5, jQuery |
+| 🏫 **BDYouthICT** | Multi-branch education management: students, courses, enrollment, results, ID cards and certificates, finance, RBAC. Built the central admin panel and branch admin panels | Laravel, MySQL, Bootstrap 5, jQuery |
+| 🛒 **Opti Shop** | Multi-vendor e-commerce with warehouse and outlet management, SSLCommerz payments, wishlist and product comparison | Laravel, MySQL, Bootstrap 5, jQuery |
+| 📚 **Optilius AMS** | Education management for admins, teachers, students and parents: courses, exams, results, finance, CMS | Laravel, MySQL, Bootstrap 5, jQuery |
+| 👗 **Fiona's Style** | Solo freelance e-commerce build: admin panel, storefront, customer dashboard, POS and hold orders, coupons, wishlist, comparison, RBAC | Laravel, MySQL, Bootstrap 5, jQuery |
 
 > More projects are on my [portfolio](https://devimranahmed.com).
 
